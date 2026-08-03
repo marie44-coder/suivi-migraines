@@ -677,7 +677,7 @@ function renderDashboard(){
     recs.forEach(r=>{if(!recsByCat[r.cat])recsByCat[r.cat]=[];recsByCat[r.cat].push(r);});
     const catOrder=['Moment de la prise','Choix du traitement','Solutions complémentaires','Signaux à surveiller','Anticipation'];
 
-    pageContent='<div class="disclaimer">Ces observations sont générées automatiquement à partir de tes propres données (corrélations et comparaisons des onglets précédents). Ce ne sont pas des conseils médicaux — chaque point est accompagné de sa preuve chiffrée pour que tu puisses juger toi-même de sa solidité. Parles-en à un professionnel de santé avant d\'ajuster ton traitement.</div>'+
+    pageContent='<div class="disclaimer">Ces observations sont générées automatiquement à partir des données (corrélations et comparaisons des onglets précédents). Chaque point est accompagné de sa preuve chiffrée.</div>'+
       (recs.length?catOrder.filter(c=>recsByCat[c]).map(cat=>
         '<div class="sec"><div class="slabel">'+cat+'</div>'+
         recsByCat[cat].map(r=>'<div class="rec-card"><div class="rec-cat">'+r.cat+'</div><div class="rec-text">'+r.text+'</div>'+(r.evidence?'<div class="rec-evidence">'+r.evidence+'</div>':'')+'</div>').join('')+
